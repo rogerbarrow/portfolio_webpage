@@ -1,0 +1,57 @@
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 4rem $padding-sides;
+
+  &__header {
+    padding: 0 $padding-sides;
+  }
+}
+
+@include responsive(tab-port) { //widh < 900px?
+  @include base-padding($padding-sides: 4rem);
+}
+
+@include responsive(phone) { //widh < 600px?
+  @include base-padding($padding-sides: 1.5rem);
+}
+
+.container {
+  @include responsive(phone) { //widh < 600px?
+    padding: 1rem 1.5rem;
+  }
+}
+
+.flex-grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header {
+  background: $color-dark-gray;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 8rem;
+    font-size: 1.7rem;
+
+    @include responsive(phone) { //widh < 600px?
+      height: 6rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 4rem 0 2.5rem 0;
+  background-color: $color-dark-gray;
+}

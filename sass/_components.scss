@@ -1,0 +1,621 @@
+// TYPOGRAPHY
+
+.heading-terciary {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.paragraph {
+  font-size: $default-font;
+  line-height: 1.8;
+}
+
+//////////////////
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  @include responsive(phone) {
+    //widh < 600px?
+    display: none;
+  }
+}
+
+.user-nav {
+  display: flex;
+  font-size: $default-font;
+
+  @include responsive(phone) {
+    //widh < 600px?
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    transition: all 400ms;
+
+    &:link,
+    &:visited {
+      color: $color-light-gray;
+    }
+
+    &:hover {
+      color: $color-white;
+      background: $color-red;
+    }
+    @include responsive(phone) {
+      //widh < 600px?
+      padding: 1rem;
+    }
+  }
+}
+
+.hero {
+  height: 110vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-image: url(../img/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+
+  @include responsive(big-desktop) {
+    //widh => 1800px?
+    height: 120vh;
+  }
+
+  @include responsive(tab-land) {
+    //widh < 1200px?
+    height: 90vh;
+  }
+
+  @include responsive(tab-port) {
+    //widh < 900px?
+    height: 50vh;
+  }
+
+  @include responsive(phone-land) {
+    //widh 600 - 740px
+    height: 90vh;
+  }
+
+  @include responsive(phone) {
+    //widh < 600px?
+    height: 40vh;
+    background-position: center;
+  }
+
+  .hero__layer {
+    background-color: rgba(208, 208, 208, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    width: 100%;
+    z-index: 5;
+  }
+
+  &__heading {
+    font-size: 5rem;
+    line-height: 1.2;
+    margin-bottom: 4rem;
+    color: #222;
+
+    @include responsive(phone) {
+      //widh < 600px?
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    &--name {
+      color: $color-red;
+    }
+  }
+}
+
+.btn {
+  font-size: $default-font;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 2rem 3rem;
+  border-radius: $borders;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: $color-white;
+  background-color: $color-red;
+  transition: all 400ms;
+
+  @include responsive(phone) {
+    //widh < 600px?
+    padding: 1rem;
+  }
+
+  &:hover {
+    background-color: $color-dark-red;
+  }
+}
+
+.section-header {
+  padding: 2rem 0;
+  text-align: center;
+  background: linear-gradient(62deg, $color-light-red, $color-dark-red);
+
+  @include responsive(phone) {
+    //widh < 600px?
+    padding: 1rem;
+  }
+
+  &__heading {
+    font-size: 5.5rem;
+    color: $color-white;
+
+    @include responsive(phone) {
+      //widh < 600px?
+      font-size: 2.5rem;
+    }
+  }
+
+  &__paragraph {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: $color-light-gray;
+
+    @include responsive(phone) {
+      //widh < 600px?
+      font-size: 1.8rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.about-wrapper {
+  display: flex;
+
+  @include responsive(tab-port) {
+    //widh < 900px?
+    justify-content: space-between;
+  }
+
+  @include responsive(phone) {
+    //widh < 600px?
+    flex-wrap: wrap;
+  }
+}
+
+.about {
+  width: calc(100% / 3);
+  text-align: center;
+  margin: 0 2rem;
+
+  @include responsive(tab-port) {
+    //widh < 900px?
+    width: 25%;
+    margin: 0;
+  }
+
+  @include responsive(phone) {
+    //widh < 600px?
+    width: 80%;
+    margin: 1rem auto;
+  }
+
+  &__icon-container {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background: $color-light-red;
+    margin-bottom: 1rem;
+
+    @include responsive(tab-port) {
+      //widh < 900px?
+      width: 8rem;
+      height: 8rem;
+    }
+
+    @include responsive(phone) {
+      //widh < 600px?
+      width: 7rem;
+      height: 7rem;
+    }
+  }
+
+  &__icon {
+    height: 50%;
+  }
+}
+
+.profile {
+  width: 100%;
+  margin-top: 6rem;
+
+  @include responsive(phone) {
+    //widh < 600px?
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    text-align: justify;
+  }
+
+  &__shape {
+    width: 20rem;
+    height: 20rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    margin-right: 2rem;
+
+    @include responsive(tab-port) {
+      //widh < 900px?
+      width: 18rem;
+      height: 18rem;
+    }
+
+    @include responsive(phone) {
+      //widh < 600px?
+      width: 15rem;
+      height: 15rem;
+      shape-outside: none;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__description {
+    margin-top: 1rem;
+
+    @include responsive(phone) {
+      //widh < 600px?
+      & > :first-child {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.skills {
+  width: 70%;
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 2rem 0 0 1rem;
+  color: $color-red;
+
+  @include responsive(tab-port) {
+    //widh < 900px?
+    width: 100%;
+  }
+
+  @include responsive(phone) {
+    //widh < 600px?
+    font-size: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  & span:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  &__paragraph {
+    color: $color-font;
+    font-weight: 400;
+    margin-top: 1rem;
+  }
+}
+
+.card {
+  width: calc(100% / 3 - 2rem);
+  height: 41rem;
+  margin: 1rem;
+  overflow: hidden;
+  border-bottom-right-radius: $borders;
+  border-bottom-left-radius: $borders;
+  border: 1px solid $color-gray;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+  @include responsive(tab-port) {
+    //widh < 900px?
+    width: calc(100% / 2 - 2rem);
+  }
+
+  @include responsive(phone) {
+    //widh < 600px?
+    width: 95%;
+    margin: 1rem auto;
+  }
+
+  &__thumbnail {
+    height: 60%;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__description {
+    padding: 1rem;
+    height: 40%;
+    text-align: center;
+    background-color: $color-white;
+    position: relative;
+  }
+
+  &__heading {
+    font-size: 2rem;
+    display: inline-block;
+    transition: all 350ms;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-font;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    line-height: 1.4;
+
+    @include responsive(phone) {
+      //widh < 600px?
+      margin-top: 0;
+    }
+  }
+
+  &__github {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #999999;
+    transition: color 250ms ease-out;
+    position: absolute;
+    bottom: 1rem;
+    transform: translateX(-50%);
+
+    &:hover {
+      color: $color-light-red;
+    }
+  }
+}
+
+.reference {
+  width: calc(100% / 3 - 2rem);
+  margin: 0 auto;
+
+  @include responsive(phone) {
+    //widh < 600px?
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+  }
+
+  &__logo {
+    height: 4.2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__heading {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  &__link {
+    color: $color-blue;
+    text-decoration: none;
+    transition: color 400ms;
+
+    &:hover {
+      color: $color-red;
+    }
+  }
+}
+
+.contact-form {
+  display: flex;
+  width: 75rem;
+  padding: 3rem;
+  border-radius: $borders;
+  background: linear-gradient(90deg, $color-red 54.3%, $color-dark-gray 50%);
+
+  @include responsive(phone) {
+    //widh < 600px?
+    background: $color-dark-gray;
+  }
+}
+
+.form-side {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  width: 55%;
+
+  @include responsive(phone) {
+    //widh < 600px?
+    display: none;
+  }
+
+  &__heading {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    color: $color-white;
+  }
+
+  &__content {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    color: $color-white;
+    margin-bottom: 4rem;
+  }
+
+  &__span {
+    font-size: $default-font;
+    margin-left: 1rem;
+  }
+}
+
+.form {
+  width: 45%;
+  padding-left: 3rem;
+
+  @include responsive(phone) {
+    //widh < 600px?
+    width: 100%;
+    padding: 0;
+  }
+
+  &__group {
+    padding: 1rem 0;
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 1rem 1rem;
+    outline: none;
+    border-radius: $borders;
+    border: 1px solid $color-gray;
+    text-indent: 3rem;
+    position: relative;
+    transition: all 300ms;
+
+    &:focus {
+      background: rgb(252, 207, 213);
+    }
+  }
+
+  .expand {
+    width: 100%;
+    height: 0;
+    display: flex;
+    background: #04c986;
+    color: #157051;
+    padding: 1rem 0;
+    font-size: 1.3rem;
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 250ms ease-out;
+
+    &,
+    p {
+      margin: 0 auto;
+    }
+
+    &,
+    span {
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+  }
+
+  .show-expand {
+    height: 4.2rem;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__submit {
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  &__input-img {
+    height: 2rem;
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+    -webkit-filter: contrast(1%);
+    filter: contrast(1%);
+  }
+}
+
+.footer-nav {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: $color-light-gray;
+
+  &__link {
+    text-decoration: none;
+    color: $color-light-gray;
+    transition: all 400ms;
+
+    &:hover {
+      color: $color-white;
+      text-decoration: underline;
+    }
+  }
+}
+
+.social-media {
+  font-size: 3.5rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+
+  a:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  &__icon {
+    color: $color-light-gray;
+    transition: all 400ms;
+
+    &:hover {
+      color: $color-red;
+    }
+  }
+}
+
+.copyright {
+  font-size: $default-font;
+  text-transform: uppercase;
+  color: $color-light-gray;
+  margin: 0 auto;
+
+  &__name {
+    color: $color-red;
+    font-weight: bold;
+  }
+}
